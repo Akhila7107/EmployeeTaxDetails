@@ -1,17 +1,19 @@
 package com.employee.tax_calculator.service;
 
+import java.util.Arrays;
 import java.util.List;
-
-import javax.transaction.Transactional;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.employee.tax_calculator.Vo.EmployeeInfoVo;
+
+
 import com.employee.tax_calculator.Repository.EmployeeRepository;
 
 @Service
-@Transactional
+
 public class EmployeeServiceImpl implements EmployeeService{
 
 	@Autowired
@@ -20,6 +22,18 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public List<EmployeeInfoVo> findAll() {
 		return employeeRepository.findAll();
+	}
+
+	@Override
+	public void saveEntity(EmployeeInfoVo employeeInfo) {
+		
+		 employeeRepository.saveAndFlush(employeeInfo);
+		
+	}
+
+	@Override
+	public Optional<EmployeeInfoVo> getDataByEmployeeId(String employeeId) {
+		return employeeRepository.findByEmployeeId(employeeId);
 	}
 
 }

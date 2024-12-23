@@ -1,0 +1,95 @@
+Microsoft Windows [Version 10.0.19045.5247]
+(c) Microsoft Corporation. All rights reserved.
+
+E:\Akhila Space\tax-calculator>git init
+Initialized empty Git repository in E:/Akhila Space/tax-calculator/.git/
+
+E:\Akhila Space\tax-calculator>git checkout -b main
+Switched to a new branch 'main'
+
+E:\Akhila Space\tax-calculator>git add .
+warning: in the working copy of 'pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/java/com/employee/TaxCalculatorApplication.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/test/java/com/employee/tax_calculator/TaxCalculatorApplicationTests.java', LF will be replaced by CRLF the next time Git touches it
+
+E:\Akhila Space\tax-calculator>git commit -m "Initial commit"
+[main (root-commit) ba2c9e3] Initial commit
+ Committer: Hejeebu Akhila Sarvani <sarvani.h@fluentgrid.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 262 insertions(+)
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/employee/TaxCalculatorApplication.java
+ create mode 100644 src/main/java/com/employee/tax_calculator/Repository/EmployeeRepository.java
+ create mode 100644 src/main/java/com/employee/tax_calculator/Vo/EmployeeInfoVo.java
+ create mode 100644 src/main/java/com/employee/tax_calculator/controller/EmployeeInfoController.java
+ create mode 100644 src/main/java/com/employee/tax_calculator/service/EmployeeService.java
+ create mode 100644 src/main/java/com/employee/tax_calculator/service/EmployeeServiceImpl.java
+ create mode 100644 src/main/resources/application.properties
+ create mode 100644 src/test/java/com/employee/tax_calculator/TaxCalculatorApplicationTests.java
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/springBoot.git
+
+E:\Akhila Space\tax-calculator>git push -u origin main
+To https://github.com/Akhila7107/springBoot.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Akhila7107/springBoot.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/EmployeeDetails.git
+error: remote origin already exists.
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/TaxCalculationDetails.git
+error: remote origin already exists.
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/EmployeeTaxDetails.git
+error: remote origin already exists.
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/EmployeeTaxDetails.git
+error: remote origin already exists.
+
+E:\Akhila Space\tax-calculator>git push origin <EmployeeDetails
+The system cannot find the file specified.
+
+E:\Akhila Space\tax-calculator>git push -u origin main
+To https://github.com/Akhila7107/springBoot.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Akhila7107/springBoot.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+E:\Akhila Space\tax-calculator>git remote add origin https://github.com/Akhila7107/TaxCalculationDetails.git
+error: remote origin already exists.
+
+E:\Akhila Space\tax-calculator>git remote add Employee https://github.com/Akhila7107/EmployeeTaxDetails.git
+
+E:\Akhila Space\tax-calculator>git push Employee main
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (20/20), done.
+Writing objects: 100% (27/27), 3.68 KiB | 235.00 KiB/s, done.
+Total 27 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Akhila7107/EmployeeTaxDetails.git
+ * [new branch]      main -> main
+
+E:\Akhila Space\tax-calculator>

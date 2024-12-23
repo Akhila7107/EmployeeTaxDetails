@@ -1,28 +1,35 @@
 package com.employee.tax_calculator.Vo;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 
 @Entity
 @Table(name="employee_details")
 public class EmployeeInfoVo {
 
+	
 	    @Id
-	    @Column(name = "employeeId")
+	    @Column(name = "employee_id")
 	    private String employeeId;
 
-	    @Column(name = "firstName", nullable = false)
+	    @Column(name = "first_name", nullable = false)
 	    private String firstName;
 
-	    @Column(name = "lastName", nullable = false)
+	    @Column(name = "last_name", nullable = false)
 	    private String lastName;
 
 	    @Column(name = "email", unique = true, nullable = false)
 	    private String email;
 
-	    @Column(name = "phoneNumbers")
+	    @Column(name = "phone_numbers")
 	    private String phoneNumbers; 
 
 	    @Column(name = "doj", nullable = false)
@@ -65,12 +72,25 @@ public class EmployeeInfoVo {
 	        this.email = email;
 	    }
 
-	    public String getPhoneNumbers() {
-	        return phoneNumbers;
+	    public void setPhoneNumbers(List<String> phoneNumbers) {
+	        try {
+	            ObjectMapper objectMapper = new ObjectMapper();
+	            this.phoneNumbers = objectMapper.writeValueAsString(phoneNumbers); 
+	        } catch (JsonProcessingException e) {
+	            // Handle exception (e.g., log the error)
+	            e.printStackTrace();
+	        }
 	    }
 
-	    public void setPhoneNumbers(String phoneNumbers) {
-	        this.phoneNumbers = phoneNumbers;
+	    public List<String> getPhoneNumbers() {
+	        try {
+	            ObjectMapper objectMapper = new ObjectMapper();
+	            return objectMapper.readValue(this.phoneNumbers, List.class);
+	        } catch (JsonProcessingException e) {
+	            // Handle exception (e.g., log the error)
+	            e.printStackTrace();
+	            return null; // Or handle the error differently
+	        }
 	    }
 
 	    public Date getDoj() {
